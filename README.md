@@ -1,34 +1,67 @@
-# Single Markdown Document (SMD)
-
-![SMD in action](https://private-us-east-1.manuscdn.com/sessionFile/xN8MvCjaQq5tZXnf3fzyrf/sandbox/ZTxpLRQunEZtc1VVmE1esC-images_1781964746115_na1fn_L2hvbWUvdWJ1bnR1L3NtZF9pbWFnZQ.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUveE44TXZDamFRcTV0WlhuZjNmenlyZi9zYW5kYm94L1pUeHBMUlF1bkVadGMxVlZtRTFlc0MtaW1hZ2VzXzE3ODE5NjQ3NDYxMTVfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwzTnRaRjlwYldGblpRLnBuZyIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=j-cPb6wpPmFVpBWed-xOAfZN7I7ooz0eQDcaa~RzM1RIxSX9jLxvJt~h9yRqXBAWYLzj8j6CW8HaO9R4DNUBQ8xuaP95xeUrYNmB8UmngiFQNIJxkC5uxbNdMLtLA9qdJ6NDmndwvfsq70UPBNT1h9JbSvtlvOGZnaBmEr6CsYmygLMt9lQDUZOgE84-dhIhxK2t1lZHFERkHJtRg9yhLSikMI7Ka0Upwm8kiE0dGV5E3SYDzaNjW7u2fatS5sVRNNQ9iYV8hi243nnOvrgWqI~nxIhPho3YogDFCYHkYOUaX2WhQNl4UP86LdbjtCJvuWtKm1cwOODSrRPR2WuAWQ__)
-
 <div align="center">
 
-### Stop wasting tokens. Start reading code smarter.
+<img src="https://i.ibb.co/23mtRhZQ/Chat-GPT-Image-Jun-20-2026-05-10-44-PM-Photoroom.png" alt="SMD Logo" width="180" />
+
+# 📄 SMD
+
+### Single Markdown Document
+
+**Turn entire codebases into one AI-ready Markdown file.**
+
+Save tokens • Reduce costs • Speed up AI workflows
 
 [![npm version](https://img.shields.io/npm/v/smd-code-agent.svg)](https://www.npmjs.com/package/smd-code-agent)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node.js](https://img.shields.io/badge/node-%3E%3D14.0.0-brightgreen.svg)](https://nodejs.org/)
+[![Downloads](https://img.shields.io/npm/dm/smd-code-agent.svg)](https://www.npmjs.com/package/smd-code-agent)
+[![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js](https://img.shields.io/badge/node-%3E%3D14-brightgreen.svg)](https://nodejs.org/)
+
+### 🚀 Give your AI the whole project context — in one file.
 
 </div>
 
----
-
-## Overview
-
-SMD (Single Markdown Document) is a powerful command-line tool designed to optimize the way AI coding agents interact with your codebase. It scans a specified folder and consolidates all your code files into a single, clean Markdown document. This approach significantly enhances the efficiency of AI tools like **GitHub Copilot**, **Cursor**, **Claude**, and **ChatGPT** by providing them with a unified context.
-
-Instead of requiring your AI agent to navigate and process numerous individual files, SMD presents a single, comprehensive `.md` file. This results in substantial benefits:
-
-*   **Token Savings:** Drastically reduces the number of tokens consumed by AI models.
-*   **Time Efficiency:** Accelerates context loading and processing times for AI agents.
-*   **Cost Reduction:** Lowers API call costs by minimizing token usage.
 
 ---
 
-## Installation
+## Why SMD?
 
-To install SMD globally, use npm:
+Modern AI coding tools struggle with large projects because they must load dozens or hundreds of files separately.
+
+SMD solves this by converting your entire codebase into a **single, organized Markdown document** optimized for AI agents.
+
+Instead of this:
+
+```
+AI → file1.js
+AI → file2.ts
+AI → file3.py
+...
+AI → file127.tsx
+```
+
+You get this:
+
+```
+AI → project.md
+```
+
+One file. Complete context.
+
+---
+
+## ✨ Features
+
+* ⚡ Merge entire projects into one Markdown file
+* 🤖 Optimized for AI coding assistants
+* 💰 Reduce token usage and API costs
+* 📂 Automatically generates a Table of Contents
+* 🔍 Supports custom file extensions
+* 🚫 Ignore unnecessary folders and build artifacts
+* 🌎 Works across multiple programming languages
+* 🛠 Simple CLI interface
+
+---
+
+## 📦 Installation
 
 ```bash
 npm install -g smd-code-agent
@@ -36,164 +69,155 @@ npm install -g smd-code-agent
 
 ---
 
-## Quick Start
+## 🚀 Quick Start
 
-Get started with SMD in just a few steps:
-
-*   **Default Usage:** Scans the `codes` folder and outputs `codes.md`.
-
-    ```bash
-    smd
-    ```
-
-*   **Custom Source and Output:** Specify your input directory and desired output file.
-
-    ```bash
-    smd ./src ./my-code.md
-    ```
-
----
-
-## Usage Examples
-
-SMD offers flexible options to tailor its behavior to your project's needs.
-
-### Read a React Project
-
-Include specific file extensions and ignore common development artifacts.
+Generate documentation from the default `codes` folder:
 
 ```bash
-smd ./src ./src-code.md -e "js,jsx,ts,tsx,css" -i "node_modules,dist,.next"
+smd
 ```
 
-### Read Only Backend Code
-
-Focus on specific backend languages within a directory.
+Generate from a custom folder:
 
 ```bash
-smd ./backend ./backend.md -e "py,go,java"
-```
-
-### Skip Build Artifacts
-
-Exclude various build and configuration folders.
-
-```bash
-smd ./project ./project.md -i "node_modules,dist,build,.git,.vscode"
+smd ./src ./project.md
 ```
 
 ---
 
-## Configuration Options
+## 📚 Examples
 
-Customize SMD's behavior using the following command-line options:
+### React Project
 
-| Option                    | Description                                        | Default Value                                                                                                 |
-| :------------------------ | :------------------------------------------------- | :------------------------------------------------------------------------------------------------------------ |
-| `-e, --extensions <list>` | Comma-separated list of file extensions to include | `js,ts,jsx,tsx,py,java,c,cpp,go,rs,rb,php,html,css,json,yaml,yml,toml,md,txt` |
-| `-i, --ignore <list>`     | Comma-separated list of folders to ignore          | `node_modules,.git,dist,build,.next,__pycache__,.vscode`                                                      |
+```bash
+smd ./src ./src-code.md \
+  -e "js,jsx,ts,tsx,css" \
+  -i "node_modules,dist,.next"
+```
+
+### Backend Only
+
+```bash
+smd ./backend ./backend.md \
+  -e "py,go,java"
+```
+
+### Ignore Build Files
+
+```bash
+smd ./project ./project.md \
+  -i "node_modules,dist,build,.git,.vscode"
+```
 
 ---
 
-## Output Format
+## ⚙️ CLI Options
 
-The generated Markdown file follows a structured format, making it easy for AI agents to parse and understand:
+| Option                    | Description           | Default                                                                       |
+| ------------------------- | --------------------- | ----------------------------------------------------------------------------- |
+| `-e, --extensions <list>` | Extensions to include | `js,ts,jsx,tsx,py,java,c,cpp,go,rs,rb,php,html,css,json,yaml,yml,toml,md,txt` |
+| `-i, --ignore <list>`     | Directories to ignore | `node_modules,.git,dist,build,.next,__pycache__,.vscode`                      |
 
-```markdown
+---
+
+## 📝 Output Example
+
+SMD generates a structured Markdown document:
+
+````md
 # Code Documentation
-> Auto-generated by smd
-> Generated on: 2026-06-20T...
+
+> Auto-generated by SMD
 
 ## Table of Contents
-- [file1.js](#file1-js)
-- [file2.py](#file2-py)
-- ...
+
+- file1.js
+- file2.py
+- file3.ts
 
 ---
 
 ## Files
 
 ### file1.js
-> Lines: 45
 
 ```javascript
-// your code here
+// code...
 ```
 
 ---
-```
+````
+
+Perfect for:
+
+* ChatGPT
+* Claude
+* Cursor
+* GitHub Copilot
+* Gemini
+* Any LLM workflow
 
 ---
 
-## Why SMD?
+## 💡 Why Developers Use SMD
 
-SMD addresses critical challenges in AI-assisted coding by streamlining context provision:
-
-| Without SMD                     | With SMD                        |
-| :------------------------------ | :------------------------------ |
-| Agent reads 50+ files separately | Agent reads 1 consolidated file |
-| Thousands of tokens wasted      | Minimal token usage             |
-| Slow context loading            | Instant context loading         |
-| Expensive API calls             | Cost-efficient API calls        |
+| Traditional Approach             | With SMD             |
+| -------------------------------- | -------------------- |
+| Read 50–200 files individually   | Read one file        |
+| Large token consumption          | Lower token usage    |
+| Slower context loading           | Faster prompts       |
+| Higher API costs                 | Reduced costs        |
+| Fragmented project understanding | Full project context |
 
 ---
 
-## Programmatic Usage
-
-Integrate SMD into your own scripts for automated code consolidation:
+## 🧩 Programmatic Usage
 
 ```javascript
-const { generateSMD } = require("smd-code-agent");
+const { generateSMD } = require('smd-code-agent');
 
-generateSMD("./src", "./output.md", {
-  extensions: ["js", "ts", "py"],
-  ignore: ["node_modules", ".git"],
+generateSMD('./src', './output.md', {
+  extensions: ['js', 'ts', 'py'],
+  ignore: ['node_modules', '.git']
 });
 ```
 
 ---
 
-## Supported Languages
+## 🌍 Supported Languages
 
-SMD supports a wide array of programming languages, ensuring comprehensive coverage for diverse projects.
-
-<details>
-<summary>Click to expand</summary>
-
-*   JavaScript / TypeScript
-*   Python
-*   Java
-*   C / C++
-*   Go
-*   Rust
-*   Ruby
-*   PHP
-*   HTML / CSS / SCSS
-*   JSON / YAML / TOML
-*   Markdown
-*   SQL
-*   GraphQL
-*   Vue / Svelte
-
-</details>
+JavaScript • TypeScript • Python • Java • C • C++ • Go • Rust • Ruby • PHP • HTML • CSS • JSON • YAML • TOML • SQL • GraphQL • Vue • Svelte • Markdown
 
 ---
 
-## Contributing
+## 🤝 Contributing
 
-We welcome contributions to SMD! To contribute, please follow these steps:
+Contributions are welcome.
 
-1.  Fork the repository.
-2.  Create your feature branch (`git checkout -b feature/amazing`).
-3.  Commit your changes (`git commit -m 'Add amazing feature'`).
-4.  Push to the branch (`git push origin feature/amazing`).
-5.  Open a Pull Request.
+1. Fork the repository
+2. Create a branch
+
+```bash
+git checkout -b feature/amazing-feature
+```
+
+3. Commit your changes
+
+```bash
+git commit -m "Add amazing feature"
+```
+
+4. Push to GitHub
+
+```bash
+git push origin feature/amazing-feature
+```
+
+5. Open a Pull Request
 
 ---
 
-## License
-
-SMD is open-source software licensed under the MIT License.
+## 📄 License
 
 MIT © 2026
 
@@ -201,8 +225,10 @@ MIT © 2026
 
 <div align="center">
 
-**Made with care for the AI coding community**
+### Built for the AI coding era.
 
-[Report Bug](https://github.com/yourusername/smd/issues) · [Request Feature](https://github.com/yourusername/smd/issues)
+**Stop wasting tokens. Start coding smarter.**
+
+⭐ Star this repository if SMD saves you time.
 
 </div>
