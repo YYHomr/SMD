@@ -1,0 +1,25 @@
+{
+  "name": "smd-code-agent",
+  "version": "1.0.0",
+  "description": "Reads all files in a folder and generates a single markdown file for coding agents to save tokens",
+  "main": "index.js",
+  "bin": {
+    "smd": "./bin/smd.js"
+  },
+  "keywords": [
+    "code",
+    "agent",
+    "markdown",
+    "tokens",
+    "cli",
+    "code-reader"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
