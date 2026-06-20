@@ -1,12 +1,6 @@
 <div align="center">
 
-<img src="https://i.ibb.co/23mtRhZQ/Chat-GPT-Image-Jun-20-2026-05-10-44-PM-Photoroom.png" alt="SMD Logo" width="180" />
-
-# 📄 SMD
-
-### Single Markdown Document
-
-**Turn entire codebases into one AI-ready Markdown file.**
+<img src="https://i.ibb.co/23mtRhZQ/Chat-GPT-Image-Jun-20-2026-05-10-44-PM-Photoroom.png" alt="SMD Logo" width="480" />
 
 Save tokens • Reduce costs • Speed up AI workflows
 
